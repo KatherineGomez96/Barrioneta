@@ -1,9 +1,26 @@
-.sidebar {
-    height: 70vh;
+ .sidebar {
+    height: 45vh;
     position: sticky;
     top: 0;
     background-color: #f5f1e3;
 
+}
+
+/* menu styles*/
+
+@media (max-width: 576px) {
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+}
+.navbar {
+    border: 1px solid hsl(211, 26%, 53%);
+    border-radius: 0.5rem;
+    overflow: hidden; 
 }
 
 .historias,
@@ -103,7 +120,7 @@
     color: red;
 }
 
-.menu-inferior {
+/* .menu-inferior {
     display: none;
     position: fixed;
     bottom: 0;
@@ -114,7 +131,7 @@
     padding: 10px 0;
     display: flex;
     justify-content: space-around;
-}
+} */
 
 @media (max-width: 768px) {
     .sidebar {

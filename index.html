@@ -24,42 +24,55 @@
                 border-radius: 0.5rem;
                 overflow: hidden; 
             }
-        </style>
+        </style> 
     </head>
 
     <body>
 
-<!--         
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        
+        <header>
             <div class="container-fluid">
                 <a href="#" class="navbar-brand">ACÁ IMAGEN DE BARRIONETA</a>
-                <div class="dropdown ms-auto">
+<!--                 <div class="dropdown ms-auto">
                     <img src="https://via.placeholder.com/40" alt="Imagen de ejemplo" class="img-perfil round-circle" id="perfilBoton" data-bs-toggle="dropdown" aria-expanded="false">
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilBoton">
                         <li><a href="" class="dropdown-item">Perfil</a></li>
                         <li><a href="" class="dropdown-item">Configuración</a></li>
                         <li><a href="" class="dropdown-item">Salir</a></li>
                     </ul>
-                </div>
+                </div> -->
             </div>
-        </nav> -->
+        </header> 
 
         <!--SIDEBAR-->
         <div class="container-fluid">
-            <div class="row">
+            <div class="row g-0 d-flex justify-content-around">
 
-                <div class="col-md-2 sidebar p-3 mt-2">
-                    <nav class="nav flex-column">
-                        <a href="" class="nav-link active">Inicio</a>
-                        <a href="" class="nav-link active">Mensajes</a>
-                        <a href="" class="nav-link active">Guardados o favoritos?</a>
-                        <a href="" class="nav-link active">Configuración de nuevo</a>
-                    </nav>
-                </div>
-
+                <nav class=" col-md-2 navbar mt-2 p-2 d-none d-md-block bg-light sidebar">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Favoritos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Buscar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Acerca de nosotras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Configuración</a>
+                        </li>
+                    </ul>
+                </nav>
 
                 <!--OTRA COLUMNITA, A POCO NO?-->
-                <div class="col-md-7 mt-2">
+                <div class="col-md-6 mt-2">
                     <div class="historias mb-3">
                         <div class="d-flex gap-2">
                             <img src="https://via.placeholder.com/60" alt="unita" class="rounded-circle">
@@ -119,14 +132,14 @@
         <!-- menu para celulares -->
         <nav class="navbar navbar-light bg-light d-md-none menu-inferior">
             <div class="row">
-                <a class="nav-link" href="#">Buscar</a>
-                <a class="nav-link" href="#">Favoritos</a>
-                <a class="nav-link" href="#">Inicio</a>
-                <a class="nav-link" href="#">Perfil</a>
-                <a class="nav-link" href="#">Config</a>                
+                <a class="col-md-2 nav-link" href="#">Buscar</a>
+                <a class="col-md-2 nav-link" href="#">Favoritos</a>
+                <a class="col-md-2 nav-link" href="#">Inicio</a>
+                <a class="col-md-2 nav-link" href="#">Perfil</a>
+                <a class="col-md-2 nav-link" href="#">Config</a>                
             </div>
 
-        </nav>  
+        </nav>
         
 
 
