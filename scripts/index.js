@@ -1,27 +1,27 @@
 const publicaciones = [
     {
-        imagen: "amarre.jpg",
-        perfil: "/img/anteojos.jpg",
+        imagen: "/assets/imgCarrusel/amarre.jpg",
+        perfil: "/assets/imgPerfil/anteojos.jpg",
         nombre: "Tu Brujitx"
     },
     {
-        imagen: "piercing.jpg",
-        perfil: "/img/barbie.jpg",
+        imagen: "/assets/imgCarrusel/piercing.jpg",
+        perfil: "/assets/imgPerfil/barbie.jpg",
         nombre: "Cuervo Sad"
     },
     {
-        imagen: "señorrrr.jpg",
-        perfil: "/img/señorOrejas.jpg",
+        imagen: "/assets/imgCarrusel/señorrrr.jpg",
+        perfil: "/assets/imgPerfil/señorOrejas.jpg",
         nombre: "Raúl Robales"
     },
     {
-        imagen: "Marley.jpg",
-        perfil: "/img/yendoMarley.jpg",
+        imagen: "/assets/imgCarrusel/Marley.jpg",
+        perfil: "/assets/imgPerfil/yendoMarley.jpg",
         nombre: "Universitaria"
     },
     {
-        imagen: "yastin.jpg",
-        perfil: "/img/spiderPink.jpg",
+        imagen: "/assets/imgCarrusel/yastin.jpg",
+        perfil: "/assets/imgPerfil/spiderPink.jpg",
         nombre: "Umberto Primo"
     }
 ];
