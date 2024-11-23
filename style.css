@@ -1,5 +1,23 @@
+
+
+.rounded-circle {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.name {
+    font-weight: 400;
+    color: black;
+}
+.description {
+    font-weight: 300;
+    color: black;
+}
+
+
+
 .sidebar {
-    height: 55vh;
+    height: 85vh;
     position: sticky;
     top: 0;
     background-color: #f5f1e3;
@@ -10,8 +28,6 @@
     align-items: center;
 
 }
-
-
 
 @media (max-width: 576px) {
     .navbar {
@@ -40,8 +56,6 @@
 .active{
     font-weight:600;
 }
-
-
 
 .rounded-button {
     background-color: #1b9aaa;
