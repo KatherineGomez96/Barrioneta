@@ -2,34 +2,34 @@ const publicaciones = [
     {
         imagen: "amarre.jpg",
         perfil: "/img/anteojos.jpg",
-        nombre: "Tu Brujitx"
+        nombre: "Tu Brujitx",
     },
     {
         imagen: "piercing.jpg",
         perfil: "/img/barbie.jpg",
-        nombre: "Cuervo Sad"
+        nombre: "Cuervo Sad",
     },
     {
         imagen: "señorrrr.jpg",
         perfil: "/img/señorOrejas.jpg",
-        nombre: "Raúl Robales"
+        nombre: "Raúl Robales",
     },
     {
         imagen: "Marley.jpg",
         perfil: "/img/yendoMarley.jpg",
-        nombre: "Universitaria"
+        nombre: "Universitaria",
     },
     {
         imagen: "yastin.jpg",
         perfil: "/img/spiderPink.jpg",
-        nombre: "Umberto Primo"
-    }
+        nombre: "Umberto Primo",
+    },
 ];
 
 const carouselContent = document.getElementById("carouselContent");
 
 publicaciones.forEach((pub, index) => {
-    const activeClass = index === 0 ? "active" : ""; 
+    const activeClass = index === 0 ? "active" : "";
     const slide = `
     <div class="carousel-item ${activeClass}">
        <div class="story-container">
@@ -50,3 +50,35 @@ publicaciones.forEach((pub, index) => {
 function toggleLike(button) {
     button.classList.toggle("liked");
 }
+
+// Función para mostrar una historia
+function viewStory(storyElement) {
+    const storyViewer = document.getElementById("story-viewer");
+    const storyImage = document.getElementById("story-image");
+    const storyImgSrc = storyElement.querySelector("img").src;
+
+    storyImage.src = storyImgSrc;
+
+    storyViewer.classList.add("visible");
+    storyViewer.classList.remove("hidden");
+
+    storyElement.dataset.viewed = "true";
+}
+
+// Función para cerrar el popup
+function closeViewer() {
+    const storyViewer = document.getElementById("story-viewer");
+    storyViewer.classList.remove("visible");
+    storyViewer.classList.add("hidden");
+}
+
+
+function updateStories() {
+    const stories = document.querySelectorAll(".story");
+    stories.forEach((story) => {
+        const viewed = Math.random() > 0.5;
+        story.setAttribute("data-viewed", viewed ? "true" : "false");
+    });
+}
+
+setInterval(updateStories, 10000);

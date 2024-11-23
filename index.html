@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    
-        <link rel="stylesheet" href="style.css">
-        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
 
+        <link rel="stylesheet" href="style.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+        />
     </head>
 
     <body>
-
-        
         <header>
             <div class="container-fluid">
                 <a href="#" class="navbar-brand">ACÁ IMAGEN DE BARRIONETA</a>
-<!--                 <div class="dropdown ms-auto">
+                <!--                 <div class="dropdown ms-auto">
                     <img src="https://via.placeholder.com/40" alt="Imagen de ejemplo" class="img-perfil round-circle" id="perfilBoton" data-bs-toggle="dropdown" aria-expanded="false">
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilBoton">
                         <li><a href="" class="dropdown-item">Perfil</a></li>
@@ -29,7 +36,7 @@
                     </ul>
                 </div> -->
             </div>
-        </header> 
+        </header>
 
         <div class="container-fluid">
             <div class="row g-0 d-flex justify-content-around">
@@ -74,144 +81,232 @@
                 <div class="col-md-6 mt-2">
                     <div class="historias mb-3">
                         <div class="d-flex gap-2">
-                            <img src="https://via.placeholder.com/60" alt="unita" class="rounded-circle">
-                            <img src="https://via.placeholder.com/60" alt="dos" class="rounded-circle">
-                            <img src="https://via.placeholder.com/60" alt="trecita" class="rounded-circle">
+                            <div class="stories-container">
+                                <div
+                                    class="story"
+                                    data-viewed="false"
+                                    onclick="viewStory(this)"
+                                >
+                                    <div class="image-wrapper rounded-circle">
+                                        <img
+                                            src="https://via.placeholder.com/150"
+                                            alt="Pepita Martinez"
+                                            class="rounded-img"
+                                        />
+                                    </div>
+                                    <p>Pepita Martinez</p>
+                                </div>
+                                <div
+                                    class="story"
+                                    data-viewed="false"
+                                    onclick="viewStory(this)"
+                                >
+                                    <div class="image-wrapper">
+                                        <img
+                                            src="https://via.placeholder.com/150"
+                                            alt="Maria Marta"
+                                            class="rounded-img"
+                                        />
+                                    </div>
+                                    <p>Maria Marta</p>
+                                </div>
+                                <div
+                                    class="story"
+                                    data-viewed="true"
+                                    onclick="viewStory(this)"
+                                >
+                                    <div class="image-wrapper">
+                                        <img
+                                            src="https://via.placeholder.com/150"
+                                            alt="Doña Lupe"
+                                            class="rounded-img"
+                                        />
+                                    </div>
+                                    <p>Doña Lupe</p>
+                                </div>
+                                <div
+                                    class="story"
+                                    data-viewed="false"
+                                    onclick="viewStory(this)"
+                                >
+                                    <div class="image-wrapper rounded-circle">
+                                        <img
+                                            src="https://via.placeholder.com/150"
+                                            alt="Juan Carlos"
+                                            class="rounded-img"
+                                        />
+                                    </div>
+                                    <p>Juan Carlos</p>
+                                </div>
+                                <div
+                                    class="story"
+                                    data-viewed="false"
+                                    onclick="viewStory(this)"
+                                >
+                                    <div class="image-wrapper rounded-circle">
+                                        <img
+                                            src="https://via.placeholder.com/150"
+                                            alt="Juan Carlos"
+                                            class="rounded-img"
+                                        />
+                                    </div>
+                                    <p>Marcos Aguirre</p>
+                                </div>
+                                <div
+                                    class="story"
+                                    data-viewed="false"
+                                    onclick="viewStory(this)"
+                                >
+                                    <div class="image-wrapper rounded-circle">
+                                        <img
+                                            src="https://via.placeholder.com/150"
+                                            alt="Juan Carlos"
+                                            class="rounded-img"
+                                        />
+                                    </div>
+                                    <p>Agustina Mendez</p>
+                                </div>
+                            </div>
+                            <!-- Contenedor emergente para ver la historia -->
+                            <div id="story-viewer" class="hidden">
+                                <div class="story-popup">
+                                    <span
+                                        class="close-btn"
+                                        onclick="closeViewer()"
+                                        >✖</span
+                                    >
+                                    <img
+                                        src=""
+                                        alt="Historia"
+                                        id="story-image"
+                                    />
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!--DON CARRUSEL, EL QUE ME QUITA EL SUEÑO Y ESO QUE LO ELEGÍ YO-->
-                    <div class="carousel slide mb-3" data-bs-ride="carousel" id="userCarousel">
+                    <div
+                        class="carousel slide mb-3"
+                        data-bs-ride="carousel"
+                        id="userCarousel"
+                    >
                         <div class="container">
                             <h5>Últimas 24hs</h5>
                         </div>
                         <div class="carousel-inner" id="carouselContent">
                             <!--Las imágenes se cargan acá-->
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#userCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#userCarousel"
+                            data-bs-slide="prev"
+                        >
+                            <span
+                                class="carousel-control-prev-icon"
+                                aria-hidden="true"
+                            ></span>
                             <span class="visually-hidden">Previo</span>
-                        </button> 
-                        <button class="carousel-control-next" type="button" data-bs-target="#userCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </button>
+                        <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#userCarousel"
+                            data-bs-slide="next"
+                        >
+                            <span
+                                class="carousel-control-next-icon"
+                                aria-hidden="true"
+                            ></span>
                             <span class="visually-hidden">Siguiente</span>
                         </button>
                     </div>
                     <!--LA SECCIÓN TIPO PINTEREST, MY LADYS-->
                     <div class="section-img row row-cols-2 g-2">
                         <div class="col img-item">
-                            <img src="https://via.placeholder.com/200x300" alt="">
+                            <img
+                                src="https://via.placeholder.com/200x300"
+                                alt=""
+                            />
                         </div>
                         <div class="col img-item">
-                            <img src="https://via.placeholder.com/200x300" alt="">
+                            <img
+                                src="https://via.placeholder.com/200x300"
+                                alt=""
+                            />
                         </div>
                         <div class="col img-item">
-                            <img src="https://via.placeholder.com/200x300" alt="">
+                            <img
+                                src="https://via.placeholder.com/200x300"
+                                alt=""
+                            />
                         </div>
                         <div class="col img-item">
-                            <img src="https://via.placeholder.com/200x300" alt="">
+                            <img
+                                src="https://via.placeholder.com/200x300"
+                                alt=""
+                            />
                         </div>
                     </div>
                 </div>
-                    <!--NUESTROS PORTFOLIOS-->
-                    <div class="col-md-3 mt-2">
-                        <div class="section-portfolio">
-                            <div class="portolio">
-                                <img src="https://via.placeholder.com/250x150" alt="" class="img-fluid mb-2">
-                                <p>Portfolio de Integrante</p>
-                            </div>
-                            <div class="portolio">
-                                <img src="https://via.placeholder.com/250x150" alt="" class="img-fluid mb-2">
-                                <p>Portfolio de Integrante</p>
-                            </div>
+                <!--NUESTROS PORTFOLIOS-->
+                <div class="col-md-3 mt-2">
+                    <div class="section-portfolio">
+                        <div class="portolio">
+                            <img
+                                src="https://via.placeholder.com/250x150"
+                                alt=""
+                                class="img-fluid mb-2"
+                            />
+                            <p>Portfolio de Integrante</p>
+                        </div>
+                        <div class="portolio">
+                            <img
+                                src="https://via.placeholder.com/250x150"
+                                alt=""
+                                class="img-fluid mb-2"
+                            />
+                            <p>Portfolio de Integrante</p>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
-        
-        <!-- menu para celulares -->
-        <nav class="navbar navbar-light bg-light d-lg-none"> <!-- Ocultar en pantallas grandes -->
-            <div class="container-fluid justify-content-around">
-              <a class="nav-link" href="#">
-                <i class="bi bi-house"></i> <!-- Icono de inicio -->
-              </a>
-              <a class="nav-link" href="#">
-                <i class="bi bi-search"></i> <!-- Icono de búsqueda -->
-              </a>
-              <a class="nav-link" href="#">
-                <i class="bi bi-plus-circle"></i> <!-- Icono de añadir -->
-              </a>
-              <a class="nav-link" href="#">
-                <i class="bi bi-heart"></i> <!-- Icono de favoritos -->
-              </a>
-              <a class="nav-link" href="#">
-                <i class="bi bi-person"></i> <!-- Icono de perfil -->
-              </a>
-            </div>
-          </nav>
-        
 
+        <!-- menu para celulares -->
+        <nav class="navbar navbar-light bg-light d-lg-none">
+            <!-- Ocultar en pantallas grandes -->
+            <div class="container-fluid justify-content-around">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-house"></i>
+                    <!-- Icono de inicio -->
+                </a>
+                <a class="nav-link" href="#">
+                    <i class="bi bi-search"></i>
+                    <!-- Icono de búsqueda -->
+                </a>
+                <a class="nav-link" href="#">
+                    <i class="bi bi-plus-circle"></i>
+                    <!-- Icono de añadir -->
+                </a>
+                <a class="nav-link" href="#">
+                    <i class="bi bi-heart"></i>
+                    <!-- Icono de favoritos -->
+                </a>
+                <a class="nav-link" href="#">
+                    <i class="bi bi-person"></i>
+                    <!-- Icono de perfil -->
+                </a>
+            </div>
+        </nav>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
         <script src="index.js"></script>
     </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>
