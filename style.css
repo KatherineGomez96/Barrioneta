@@ -1,6 +1,6 @@
 
 /*juanita (perfil chicas, ya saben)*/
-.rounded-circle {
+.rounded-circle-juanita {
     width: 100px;
     height: 100px;
     object-fit: cover;
@@ -65,7 +65,7 @@
 }
 
 /*menu celulares*/
-@media (max-width: 576px) {
+@media (max-width: 600px) {
     .navbar {
         position: fixed;
         bottom: 0;
