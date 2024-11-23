@@ -1,5 +1,5 @@
  .sidebar {
-    height: 45vh;
+    height: 50vh;
     position: sticky;
     top: 0;
     background-color: #f5f1e3;
@@ -23,6 +23,12 @@
     overflow: hidden; 
 }
 
+.rounded-button {
+    border-radius: 25px; /* Bordes redondeados */
+    padding: 5px 0; /* Padding superior e inferior */
+    font-size: 24px; /* Tamaño del ícono */
+    width: 80%;
+}
 .historias,
 .section-img, 
 .section-portfolio {
