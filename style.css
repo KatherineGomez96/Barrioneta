@@ -1,12 +1,17 @@
- .sidebar {
-    height: 50vh;
+.sidebar {
+    height: 55vh;
     position: sticky;
     top: 0;
     background-color: #f5f1e3;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 
 }
 
-/* menu styles*/
+
 
 @media (max-width: 576px) {
     .navbar {
@@ -17,18 +22,41 @@
         justify-content: space-around;
     }
 }
-.navbar {
-    border: 1px solid hsl(211, 26%, 53%);
-    border-radius: 0.5rem;
-    overflow: hidden; 
+
+.nav-item:not(:last-child) .nav-link {
+    color: black;
 }
 
-.rounded-button {
-    border-radius: 25px; /* Bordes redondeados */
-    padding: 5px 0; /* Padding superior e inferior */
-    font-size: 24px; /* Tamaño del ícono */
-    width: 80%;
+.nav-item:last-child .nav-link {
+    color: #1b9aaa;
 }
+
+.nav-item:hover {
+    background-color: #f1eee3cc;
+    border-radius: 4px;
+    font-weight:500;
+}
+
+.active{
+    font-weight:600;
+}
+
+
+
+.rounded-button {
+    background-color: #1b9aaa;
+    border-color: #f5f1e3;
+    border-radius: 25px;
+    padding: 5px 0;
+    font-size: 24px;
+    color: #050505;
+    width: 100%;
+}
+.rounded-button:hover{
+    background-color: #047c8b;
+    border-color: #dad2b6;
+}
+
 .historias,
 .section-img, 
 .section-portfolio {
