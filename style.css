@@ -17,15 +17,15 @@
 
 /*menu desktop, */
 .sidebar {
-    height: 90vh;
+    height: 85vh;
     position: sticky;
     top: 0;
-    background-color: #f5f1e3;
     border-radius: 0.5rem;
     overflow: hidden;
     justify-content: center;
     display: flex;
     align-items: center;
+    border-radius: 8px;
 
 }
 
@@ -70,8 +70,9 @@
         position: fixed;
         bottom: 0;
         width: 100%;
-        display: flex;
-        justify-content: space-around;
+        background-color: #f5f1e3 !important;
+        color: #050505;
+        border-radius: 8px;
     }
 }
 
