@@ -1,3 +1,49 @@
+//Dark mode
+const themeToggle = document.getElementById('theme-toggle');
+const sidebar = document.getElementById('sidebar');
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute('data-bs-theme', newTheme);
+    themeToggle.textContent = newTheme === 'dark' ? 'Modo claro' : 'Modo oscuro';
+
+
+    if (newTheme === 'dark') {
+        sidebar.classList.remove('bg-light');
+        sidebar.classList.add('bg-secondary');
+
+        const children = sidebar.querySelectorAll('.nav-link');
+        children.forEach((child, index) => {
+            if (index < children.length) {
+                child.style.color = 'white';
+            }
+        });
+
+        const perfilText = sidebar.querySelectorAll('.perfil-menu p');
+        perfilText.forEach((text) => {
+            text.style.color = 'white';
+        });
+
+    } else {
+        sidebar.classList.remove('bg-secondary');
+        sidebar.classList.add('bg-light');
+
+        const children = sidebar.querySelectorAll('.nav-link');
+        children.forEach((child, index) => {
+            if (index < children.length) {
+                child.style.color = 'black';
+            }
+        });
+
+        const perfilText = sidebar.querySelectorAll('.perfil-menu p');
+        perfilText.forEach((text) => {
+            text.style.color = 'black';
+        });
+    }
+});
+
 const publicaciones = [
     {
         imagen: "amarre.jpg",
@@ -25,52 +71,6 @@ const publicaciones = [
         nombre: "Umberto Primo",
     },
 ];
-
-//Dark mode
-const themeToggle = document.getElementById('theme-toggle');
-const sidebar = document.getElementById('sidebar');
-
-themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-    document.documentElement.setAttribute('data-bs-theme', newTheme);
-    themeToggle.textContent = newTheme === 'dark' ? 'Modo claro' : 'Modo oscuro';
-
-
-    if (newTheme === 'dark') {
-        sidebar.classList.remove('bg-light');
-        sidebar.classList.add('bg-secondary');
-
-        const children = sidebar.querySelectorAll('.nav-link');
-        children.forEach((child, index) => {
-            if (index < children.length - 1) {
-                child.style.color = 'white';
-            }
-        });
-
-        const perfilText = sidebar.querySelectorAll('.perfil-menu p');
-        perfilText.forEach((text) => {
-            text.style.color = 'white';
-        });
-
-    } else {
-        sidebar.classList.remove('bg-secondary');
-        sidebar.classList.add('bg-light');
-
-        const children = sidebar.querySelectorAll('.nav-link');
-        children.forEach((child, index) => {
-            if (index < children.length - 1) {
-                child.style.color = 'black';
-            }
-        });
-
-        const perfilText = sidebar.querySelectorAll('.perfil-menu p');
-        perfilText.forEach((text) => {
-            text.style.color = 'black';
-        });
-    }
-});
  //DON CARRUSEL
 const carouselContent = document.getElementById("carouselContent");
 
