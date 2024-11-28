@@ -1,3 +1,22 @@
+// Verificar si el usuario está en sesión
+const user = JSON.parse(localStorage.getItem("barrioneta"));
+
+if (!user || !user.loggedIn) { 
+
+  window.location.href = "logIn.html";
+  
+}
+
+// cerrar sesión
+function logout() {
+  
+  localStorage.removeItem("barrioneta");
+
+  window.location.href = "logIn.html";
+}
+
+//-------------------Kathy estuvo aqui--------------------
+
 //Dark mode
 const themeToggle = document.getElementById('theme-toggle');
 const sidebar = document.getElementById('sidebar');
