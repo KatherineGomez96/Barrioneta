@@ -16,7 +16,7 @@
 
 /*menu desktop, */
 .sidebar {
-    height: 90vh;
+    height:fit-content;
     position: sticky;
     top: 0;
     border-radius: 0.5rem;
