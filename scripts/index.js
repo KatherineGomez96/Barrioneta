@@ -1,3 +1,68 @@
+// Verificar si el usuario está en sesión
+const user = JSON.parse(localStorage.getItem("barrioneta"));
+
+if (!user || !user.loggedIn) { 
+
+  window.location.href = "logIn.html";
+  
+}
+
+// cerrar sesión
+function logout() {
+  
+  localStorage.removeItem("barrioneta");
+
+  window.location.href = "logIn.html";
+}
+
+//-------------------Kathy estuvo aqui--------------------
+
+//Dark mode
+const themeToggle = document.getElementById('theme-toggle');
+const sidebar = document.getElementById('sidebar');
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute('data-bs-theme', newTheme);
+    themeToggle.textContent = newTheme === 'dark' ? 'Modo claro' : 'Modo oscuro';
+
+
+    if (newTheme === 'dark') {
+        sidebar.classList.remove('bg-light');
+        sidebar.classList.add('bg-secondary');
+
+        const children = sidebar.querySelectorAll('.nav-link');
+        children.forEach((child, index) => {
+            if (index < children.length) {
+                child.style.color = 'white';
+            }
+        });
+
+        const perfilText = sidebar.querySelectorAll('.perfil-menu p');
+        perfilText.forEach((text) => {
+            text.style.color = 'white';
+        });
+
+    } else {
+        sidebar.classList.remove('bg-secondary');
+        sidebar.classList.add('bg-light');
+
+        const children = sidebar.querySelectorAll('.nav-link');
+        children.forEach((child, index) => {
+            if (index < children.length) {
+                child.style.color = 'black';
+            }
+        });
+
+        const perfilText = sidebar.querySelectorAll('.perfil-menu p');
+        perfilText.forEach((text) => {
+            text.style.color = 'black';
+        });
+    }
+});
+
 const publicaciones = [
     {
         imagen: "/assets/imgCarrusel/amarre.jpg",
@@ -25,11 +90,11 @@ const publicaciones = [
         nombre: "Umberto Primo"
     }
 ];
-
+ //DON CARRUSEL
 const carouselContent = document.getElementById("carouselContent");
 
 publicaciones.forEach((pub, index) => {
-    const activeClass = index === 0 ? "active" : ""; 
+    const activeClass = index === 0 ? "active" : "";
     const slide = `
     <div class="carousel-item ${activeClass}">
        <div class="story-container">
@@ -50,3 +115,35 @@ publicaciones.forEach((pub, index) => {
 function toggleLike(button) {
     button.classList.toggle("liked");
 }
+
+// Función para mostrar una historia
+function viewStory(storyElement) {
+    const storyViewer = document.getElementById("story-viewer");
+    const storyImage = document.getElementById("story-image");
+    const storyImgSrc = storyElement.querySelector("img").src;
+
+    storyImage.src = storyImgSrc;
+
+    storyViewer.classList.add("visible");
+    storyViewer.classList.remove("hidden");
+
+    storyElement.dataset.viewed = "true";
+}
+
+// Función para cerrar el popup
+function closeViewer() {
+    const storyViewer = document.getElementById("story-viewer");
+    storyViewer.classList.remove("visible");
+    storyViewer.classList.add("hidden");
+}
+
+
+function updateStories() {
+    const stories = document.querySelectorAll(".story");
+    stories.forEach((story) => {
+        const viewed = Math.random() > 0.5;
+        story.setAttribute("data-viewed", viewed ? "true" : "false");
+    });
+}
+
+setInterval(updateStories, 10000);

@@ -1,0 +1,76 @@
+/*juanita (perfil chicas, ya saben)*/
+.rounded-circle-juanita {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.name {
+    font-weight: 400;
+    color: black;
+}
+.description {
+    font-weight: 300;
+    color: black;
+}
+
+
+/*menu desktop, */
+.sidebar {
+    height:fit-content;
+    position: sticky;
+    top: 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.nav-item .nav-link {
+    color: black;
+}
+.nav-item:hover {
+    background-color: #1b9aaa;
+    color: #050505 !important;
+    border-radius: 4px;
+    font-weight:500;
+}
+.active{
+    font-weight:600;
+}
+
+.rounded-button {
+    background-color: #1b9aaa;
+    border: none;
+    border-radius: 25px;
+    padding: 5px 0;
+    font-size: 24px;
+    width: 100%;
+    transition: transform 0.2s;
+}
+.rounded-button:hover{
+    background-color: #047c8b;
+    border: none;
+}
+.rounded-button:active {
+    background-color: #1b9aaa !important;
+    transform: scale(1.04);
+}
+
+/*Sin borde porfis*/
+button.btn.rounded-button.mt-2.border {
+    border: none !important;
+    border: 0 !important;
+}
+
+/*menu celulares*/
+@media (max-width: 600px) {
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        color: #050505;
+        border-radius: 8px;
+    }
+}

@@ -1,0 +1,43 @@
+/* colores de la paleta utilizada*/
+:root {
+  --black: #050505;
+  --blue: #1B9AAA;
+  --bone: #DDD8CB;
+  --old-lace: #F5F1E3;
+  --white: #FFFFFF;
+}
+
+
+body.bg-bone {
+  background-color: var(--bone);
+}
+
+
+.card {
+  background-color: var(--old-lace); 
+  border: none;
+  border-radius: 10px; /
+}
+
+
+.btn-primary {
+  background-color: var(--blue);
+  border-color: var(--blue);
+}
+
+.btn-primary:hover {
+  background-color: darken(var(--blue), 10%);
+  border-color: darken(var(--blue), 10%);
+}
+
+
+label {
+  color: var(--black);
+}
+
+.logo {
+  width: 300px; 
+  max-width: 150%; 
+  height: auto; 
+}
+
