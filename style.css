@@ -270,3 +270,9 @@
 .rounded-img {
     border-radius: 50%;
 }
+
+/* portfolios */
+.container-portfolio {
+    max-height: 500px;
+    overflow-y: auto;
+}
