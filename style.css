@@ -273,6 +273,6 @@
 
 /* portfolios */
 .container-portfolio {
-    max-height: 500px;
+    max-height: 580px;
     overflow-y: auto;
 }
