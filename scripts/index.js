@@ -67,7 +67,7 @@ const publicaciones = [
     {
         imagen: "assets/imgCarrusel/parciales.jpg",
         perfil: "assets/imgPerfil/anteojos.jpg",
-        nombre: "Universitaria"
+        nombre: "Letuu"
     },
     {
         imagen: "assets/imgCarrusel/asado.jpg",
@@ -99,14 +99,14 @@ publicaciones.forEach((pub, index) => {
     <div class="carousel-item ${activeClass}">
        <div class="story-container">
         <img src="${pub.imagen}" class="story-image d-block w-100 img-fluid" alt="Imagen">
-        <div class="user-actions">
-            <div class="user-info">
+        <div class="user-actions ">
+            <div class="user-info gap-2">
             <img src="${pub.perfil}" class="user-profile" alt="Perfil">
             <span class="user-name">${pub.nombre}</span>
+            <div class="like-button" onclick="toggleLike(this)">&#x2764;</div>
             </div>
         </div>    
        </div>
-       <div class="like-button" onclick="toggleLike(this)">&#x2764;</div>
     </div>
     `;
     carouselContent.innerHTML += slide;
