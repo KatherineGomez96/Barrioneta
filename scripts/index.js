@@ -65,28 +65,28 @@ themeToggle.addEventListener('click', () => {
 
 const publicaciones = [
     {
-        imagen: "/assets/imgCarrusel/parciales.jpg",
-        perfil: "/assets/imgPerfil/anteojos.jpg",
+        imagen: "assets/imgCarrusel/parciales.jpg",
+        perfil: "assets/imgPerfil/anteojos.jpg",
         nombre: "Universitaria"
     },
     {
-        imagen: "/assets/imgCarrusel/asado.jpg",
-        perfil: "/assets/imgPerfil/barbie.jpg",
+        imagen: "assets/imgCarrusel/asado.jpg",
+        perfil: "assets/imgPerfil/barbie.jpg",
         nombre: "Joac0x"
     },
     {
-        imagen: "/assets/imgCarrusel/mateEnPlaza.jpg",
-        perfil: "/assets/imgPerfil/señorOrejas.jpg",
+        imagen: "assets/imgCarrusel/mateEnPlaza.jpg",
+        perfil: "assets/imgPerfil/señorOrejas.jpg",
         nombre: "xKarenx"
     },
     {
-        imagen: "/assets/imgCarrusel/Viajecito.jpg",
-        perfil: "/assets/imgPerfil/yendoMarley.jpg",
+        imagen: "assets/imgCarrusel/Viajecito.jpg",
+        perfil: "assets/imgPerfil/yendoMarley.jpg",
         nombre: "TomiiLP"
     },
     {
-        imagen: "/assets/imgCarrusel/Uno.jpg",
-        perfil: "/assets/imgPerfil/spiderPink.jpg",
+        imagen: "assets/imgCarrusel/Uno.jpg",
+        perfil: "assets/imgPerfil/spiderPink.jpg",
         nombre: "R0CHI"
     }
 ];
