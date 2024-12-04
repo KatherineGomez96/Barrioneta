@@ -65,29 +65,29 @@ themeToggle.addEventListener('click', () => {
 
 const publicaciones = [
     {
-        imagen: "/assets/imgCarrusel/amarre.jpg",
+        imagen: "/assets/imgCarrusel/parciales.jpg",
         perfil: "/assets/imgPerfil/anteojos.jpg",
-        nombre: "Tu Brujitx"
-    },
-    {
-        imagen: "/assets/imgCarrusel/piercing.jpg",
-        perfil: "/assets/imgPerfil/barbie.jpg",
-        nombre: "Cuervo Sad"
-    },
-    {
-        imagen: "/assets/imgCarrusel/señorrrr.jpg",
-        perfil: "/assets/imgPerfil/señorOrejas.jpg",
-        nombre: "Raúl Robales"
-    },
-    {
-        imagen: "/assets/imgCarrusel/Marley.jpg",
-        perfil: "/assets/imgPerfil/yendoMarley.jpg",
         nombre: "Universitaria"
     },
     {
-        imagen: "/assets/imgCarrusel/yastin.jpg",
+        imagen: "/assets/imgCarrusel/asado.jpg",
+        perfil: "/assets/imgPerfil/barbie.jpg",
+        nombre: "Joac0x"
+    },
+    {
+        imagen: "/assets/imgCarrusel/mateEnPlaza.jpg",
+        perfil: "/assets/imgPerfil/señorOrejas.jpg",
+        nombre: "xKarenx"
+    },
+    {
+        imagen: "/assets/imgCarrusel/Viajecito.jpg",
+        perfil: "/assets/imgPerfil/yendoMarley.jpg",
+        nombre: "TomiiLP"
+    },
+    {
+        imagen: "/assets/imgCarrusel/Uno.jpg",
         perfil: "/assets/imgPerfil/spiderPink.jpg",
-        nombre: "Umberto Primo"
+        nombre: "R0CHI"
     }
 ];
  //DON CARRUSEL
