@@ -17,6 +17,15 @@ function logout() {
 
 //-------------------Kathy estuvo aqui--------------------
 
+const userName = document.querySelector(".name")
+const userDescription = document.querySelector(".description")
+
+userName.textContent = user.nombre;
+userDescription.textContent = user.usuario; 
+
+let userPhoto = document.querySelector(".photo")
+userPhoto.src = user.fotoPerfil;
+
 //Dark mode
 const themeToggle = document.getElementById('theme-toggle');
 const sidebar = document.getElementById('sidebar');
