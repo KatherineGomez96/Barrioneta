@@ -1,0 +1,94 @@
+/* Menu estilo pinterest r */
+
+.pinterest {
+    column-count: 2;
+    column-gap: 10px;
+    padding: 10px;
+    row-gap: 10px;
+}
+
+.grid-item {
+    position: relative;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallary_img {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 16px;
+    display: block;
+    position: relative;
+}
+
+.gallary_img:hover {
+    opacity: 0.6;
+}
+
+.gallary_img:active {
+    opacity: 0.4;
+}
+
+.like_img {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    font-size: 25px;
+}
+
+.like_img_animation {
+    visibility: hidden;
+    position: absolute;
+    z-index: 10;
+    margin: 25px;
+    font-size: 25px;
+    right: 0;
+    bottom: 0;
+    color: white;
+    border-radius: 16px;
+}
+
+.animate_like {
+    animation: grow-font 0.5s forwards;
+}
+
+@keyframes grow-font {
+    0% {
+        visibility: visible;
+        opacity: 1;
+        font-size: 25px;
+    }
+
+    100% {
+        font-size: 200px;
+        opacity: 0.2;
+        visibility: hidden;
+    }
+}
+
+
+
+@media (min-width: 1024px) {
+    .pinterest {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.active {
+    font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
