@@ -65,30 +65,30 @@ themeToggle.addEventListener('click', () => {
 
 const publicaciones = [
     {
-        imagen: "amarre.jpg",
-        perfil: "/img/anteojos.jpg",
-        nombre: "Tu Brujitx",
+        imagen: "assets/imgCarrusel/parciales.jpg",
+        perfil: "assets/imgPerfil/anteojos.jpg",
+        nombre: "Letuu"
     },
     {
-        imagen: "piercing.jpg",
-        perfil: "/img/barbie.jpg",
-        nombre: "Cuervo Sad",
+        imagen: "assets/imgCarrusel/asado.jpg",
+        perfil: "assets/imgPerfil/barbie.jpg",
+        nombre: "Joac0x"
     },
     {
-        imagen: "señorrrr.jpg",
-        perfil: "/img/señorOrejas.jpg",
-        nombre: "Raúl Robales",
+        imagen: "assets/imgCarrusel/mateEnPlaza.jpg",
+        perfil: "assets/imgPerfil/señorOrejas.jpg",
+        nombre: "xKarenx"
     },
     {
-        imagen: "Marley.jpg",
-        perfil: "/img/yendoMarley.jpg",
-        nombre: "Universitaria",
+        imagen: "assets/imgCarrusel/Viajecito.jpg",
+        perfil: "assets/imgPerfil/yendoMarley.jpg",
+        nombre: "TomiiLP"
     },
     {
-        imagen: "yastin.jpg",
-        perfil: "/img/spiderPink.jpg",
-        nombre: "Umberto Primo",
-    },
+        imagen: "assets/imgCarrusel/Uno.jpg",
+        perfil: "assets/imgPerfil/spiderPink.jpg",
+        nombre: "R0CHI"
+    }
 ];
  //DON CARRUSEL
 const carouselContent = document.getElementById("carouselContent");
@@ -99,14 +99,14 @@ publicaciones.forEach((pub, index) => {
     <div class="carousel-item ${activeClass}">
        <div class="story-container">
         <img src="${pub.imagen}" class="story-image d-block w-100 img-fluid" alt="Imagen">
-        <div class="user-actions">
-            <div class="user-info">
+        <div class="user-actions ">
+            <div class="user-info gap-2">
             <img src="${pub.perfil}" class="user-profile" alt="Perfil">
             <span class="user-name">${pub.nombre}</span>
+            <div class="like-button" onclick="toggleLike(this)">&#x2764;</div>
             </div>
         </div>    
        </div>
-       <div class="like-button" onclick="toggleLike(this)">&#x2764;</div>
     </div>
     `;
     carouselContent.innerHTML += slide;
