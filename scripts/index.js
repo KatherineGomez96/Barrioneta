@@ -29,6 +29,7 @@ userPhoto.src = user.fotoPerfil;
 //Dark mode
 const themeToggle = document.getElementById('theme-toggle');
 const sidebar = document.getElementById('sidebar');
+const portfolios = document.querySelectorAll('.portfolio');
 
 themeToggle.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-bs-theme');
@@ -54,6 +55,11 @@ themeToggle.addEventListener('click', () => {
             text.style.color = 'white';
         });
 
+        portfolios.forEach((item) => {
+            item.classList.remove('bg-light');
+            item.classList.add('bg-secondary');
+        });
+
     } else {
         sidebar.classList.remove('bg-secondary');
         sidebar.classList.add('bg-light');
@@ -69,6 +75,12 @@ themeToggle.addEventListener('click', () => {
         perfilText.forEach((text) => {
             text.style.color = 'black';
         });
+
+        portfolios.forEach((item) => {
+            item.classList.remove('bg-secondary');
+            item.classList.add('bg-light');
+        });
+        
     }
 });
 
