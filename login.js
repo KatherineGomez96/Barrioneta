@@ -1,33 +1,49 @@
 //He aqui, el bendito LogIn <3
 
+// Acceso inicial al localStorage
+const activeUser = JSON.parse(localStorage.getItem("barrioneta"));
+
+// define el usuario como objeto
+const validUser = {
+  usuario: "@juanitakpa",
+  contraseña: "juanita22",
+  fotoPerfil: "juanita.jpg", //despues lo cambiamos con la imagen real
+  email: "juanitakpa@barrioneta.com",
+  nombre: "Juanita Martinez",
+};
+
+
+// redirigir al index directamente
+if (activeUser && activeUser.loggedIn) {
+  window.location.href = "index.html";
+}
+
+// formulario de login
 document.getElementById("loginForm").addEventListener("submit", (event) => {
   event.preventDefault();
 
-  // Obtener valores ingresados
+  // obtiene los valores ingresados
   const username = document.getElementById("username").value.trim().toLowerCase();
   const password = document.getElementById("password").value.trim();
 
-  // Validar usuario y contraseña
-  const isValidUsername = username === "@juanitakpa";
-  const isValidPassword = password === "juanita22";
-
   const errorMessage = document.getElementById("errorMessage");
 
-  //yo, y mo bocota, me la complico sola 
-  //implementacion del localStorage
-  if (isValidUsername && isValidPassword) {
-    // guarda el usuario en localStorage
-    const user = { username: "@juanitakpa", loggedIn: true };
-    localStorage.setItem("barrioneta", JSON.stringify(user));
+  // validar usuario y contraseña
+  if (username === validUser.usuario && password === validUser.contraseña) {
+    // crea un objeto nuevo de user logueado y lo guarda en localStorage
+    const loggedUser = {
+      ...validUser, // se copia todo de validUser y agrega un atributo de seciopn activa
+      loggedIn: true, 
+    };
+    localStorage.setItem("barrioneta", JSON.stringify(loggedUser));
 
-    // redirigimos al index
+    // aca no toque nada, redirigir al index
     window.location.href = "index.html";
   } else {
-    // Mostrar mensaje de error
-    errorMessage.textContent = !isValidUsername
-      ? "Usuario incorrecto."
-      : "Contraseña incorrecta.";
+    // mostrar el mensaje de error
+    errorMessage.textContent = "Usuario o contraseña incorrectos.";
     errorMessage.style.color = "red";
   }
 });
+
 
