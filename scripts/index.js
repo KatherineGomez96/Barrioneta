@@ -97,23 +97,58 @@ publicaciones.forEach((pub, index) => {
     const activeClass = index === 0 ? "active" : "";
     const slide = `
     <div class="carousel-item ${activeClass}">
-       <div class="story-container">
-        <img src="${pub.imagen}" class="story-image d-block w-100 img-fluid" alt="Imagen">
-        <div class="user-actions ">
-            <div class="user-info gap-2">
-            <img src="${pub.perfil}" class="user-profile" alt="Perfil">
-            <span class="user-name">${pub.nombre}</span>
-            <div class="like-button" onclick="toggleLike(this)">&#x2764;</div>
-            </div>
-        </div>    
-       </div>
+        <div class="story-container">
+            <img src="${pub.imagen}" class="story-image d-block w-100 img-fluid" alt="Imagen">
+            <div class="user-actions">
+                <div class="user-info">
+                <img src="${pub.perfil}" class="user-profile" alt="Perfil">
+                <span class="user-name">${pub.nombre}</span>
+                <!--ICONOS-->
+                <div class="action-icons">
+                <!-- ME GUSTA: CORAZÓN -->
+                <div class="like-button" onclick="toggleLike(this)">
+                    <i class="bi bi-heart"></i>
+                    <span class="like-count">${Math.floor(Math.random() * 500)}</span>
+                </div>
+                <!-- COMENTARIOS: UN GLOBO -->
+                <div class="comment-button">
+                    <i class="bi bi-chat"></i>
+                    <span>${Math.floor(Math.random() * 20) + 1}</span>
+                </div>
+                <!-- AVIÓN: ENVIAR -->
+                <div class="send-button" onclick="toggleSend(this)">
+                    <i class="bi bi-send"></i>
+                    <span>${Math.floor(Math.random() * 15) + 1}</span>
+                </div>    
+            </div>    
+        </div>
     </div>
     `;
     carouselContent.innerHTML += slide;
 });
 
+// -------------------------------- FUNCIONES DE LOS BOTONES DEL CARRUSEL ---------------------------------------
+// FUNCIÓN DEL LIKE Y LOS CONTADORES RANDOMS
 function toggleLike(button) {
+    const icon = button.querySelector("i");
+    const likeCount = button.querySelector(".like-count");
+
     button.classList.toggle("liked");
+    const currentLikes = parseInt(likeCount.textContent);
+
+    if (button.classList.contains("liked")) {
+        icon.classList.remove("bi-heart");
+        icon.classList.add("bi-heart-fill");
+        likeCount.textContent = currentLikes + 1; // Incrementa el contador
+    } else {
+        icon.classList.remove("bi-heart-fill");
+        icon.classList.add("bi-heart");
+        likeCount.textContent = currentLikes - 1; // Decrementa el contador
+    }
+}
+// FUNCION DE ICONO ENVIAR QUE CAMBIE DE COLOR AL CLICKEAR
+function toggleSend(button) {
+    button.classList.toggle("send");
 }
 
 // Función para mostrar una historia
