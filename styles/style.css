@@ -15,7 +15,6 @@
 }
 
 /*--------------------------------- ESTILOS DEL CARROUSEL -------------------------------------------------*/
-
 .carousel {
     max-width: 400px;
     margin: 0 auto;
@@ -57,12 +56,13 @@
 .user-info span {
     font-size: 16px;
     font-weight: bold;
+    margin-right: 15px;
 }
 
 .action-icons {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 }
 
 .action-icons i {
@@ -74,14 +74,8 @@
     font-size: 14px;
 }
 
-.like-button i{
-    cursor: pointer;
-    transition: transform 0.2s, color 0.2s ease;
-}
-
 .like-button.liked i {
-    text-shadow: 0 0 4px grey;
-    /* color: #FF1D15; */
+    text-shadow: 0 0 3px grey;
     color: #1b9aaa;
 }
 
