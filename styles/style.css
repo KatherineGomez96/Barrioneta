@@ -14,7 +14,7 @@
     border-radius: 8px;
 }
 
-/* ESTILOS DEL CARROUSEL ------------------------------------------------------------*/
+/*--------------------------------- ESTILOS DEL CARROUSEL -------------------------------------------------*/
 .carousel {
     max-width: 400px;
     margin: 0 auto;
@@ -56,30 +56,35 @@
 .user-info span {
     font-size: 16px;
     font-weight: bold;
+    margin-right: 15px;
 }
 
-.like-button {
-    position: absolute;
-    bottom: 7%; 
-    right: 50%;  
-    transform: translateY(50%);
-    font-size: 24px;
-    color: transparent;
+.action-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.action-icons i {
+    font-size: 20px;
     cursor: pointer;
-    transition: color 0.3s ease;
-    text-shadow: 0 0 1px grey;
 }
 
-.like-button.liked {
-    color: red;
+.action-icons span {
+    font-size: 14px;
 }
 
-@media (max-width: 576px) {
-    .like-button {
-        right: 40%;
-    }
+.like-button.liked i {
+    text-shadow: 0 0 3px grey;
+    color: #1b9aaa;
 }
 
+.send-button.send i {
+    text-shadow: 0 0 4px grey;
+    color: #1b9aaa; 
+}
+
+/* Historias------------------------------------ */
 .main-container {
     padding: 20px;
 }
