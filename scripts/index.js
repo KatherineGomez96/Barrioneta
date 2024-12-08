@@ -26,63 +26,7 @@ userDescription.textContent = user.usuario;
 let userPhoto = document.querySelector(".photo")
 userPhoto.src = user.fotoPerfil;
 
-//Dark mode
-const themeToggle = document.getElementById('theme-toggle');
-const sidebar = document.getElementById('sidebar');
-const portfolios = document.querySelectorAll('.portfolio');
-
-themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-    document.documentElement.setAttribute('data-bs-theme', newTheme);
-    themeToggle.textContent = newTheme === 'dark' ? 'Modo claro' : 'Modo oscuro';
-
-
-    if (newTheme === 'dark') {
-        sidebar.classList.remove('bg-light');
-        sidebar.classList.add('bg-secondary');
-
-        const children = sidebar.querySelectorAll('.nav-link');
-        children.forEach((child, index) => {
-            if (index < children.length) {
-                child.style.color = 'white';
-            }
-        });
-
-        const perfilText = sidebar.querySelectorAll('.perfil-menu p');
-        perfilText.forEach((text) => {
-            text.style.color = 'white';
-        });
-
-        portfolios.forEach((item) => {
-            item.classList.remove('bg-light');
-            item.classList.add('bg-secondary');
-        });
-
-    } else {
-        sidebar.classList.remove('bg-secondary');
-        sidebar.classList.add('bg-light');
-
-        const children = sidebar.querySelectorAll('.nav-link');
-        children.forEach((child, index) => {
-            if (index < children.length) {
-                child.style.color = 'black';
-            }
-        });
-
-        const perfilText = sidebar.querySelectorAll('.perfil-menu p');
-        perfilText.forEach((text) => {
-            text.style.color = 'black';
-        });
-
-        portfolios.forEach((item) => {
-            item.classList.remove('bg-secondary');
-            item.classList.add('bg-light');
-        });
-        
-    }
-});
+//DON CARRUSEL
 
 const publicaciones = [
     {
@@ -111,7 +55,7 @@ const publicaciones = [
         nombre: "R0CHI"
     }
 ];
- //DON CARRUSEL
+
 const carouselContent = document.getElementById("carouselContent");
 
 publicaciones.forEach((pub, index) => {

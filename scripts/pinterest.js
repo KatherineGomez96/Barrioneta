@@ -1,0 +1,64 @@
+const images = [
+  "https://plus.unsplash.com/premium_photo-1682285866576-7d2b8490cb10?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://i.pinimg.com/736x/66/3c/fc/663cfc3b279c8d1023157b5b68be1107.jpg",
+  "https://ideasconsejos.com/images/2020/11/Fotos-para-tomarte-con-tu-mejor-amiga-inmediatamente-12.jpg",
+  "https://images.unsplash.com/photo-1632616428087-bc0aeb7af242?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://4.bp.blogspot.com/-WYHBetuHAR4/VnTVSv5c8yI/AAAAAAAAa7w/FBBgqYuK9CM/s1600/Luis%2BAbinader.jpg",
+  "https://cdn.pixabay.com/photo/2024/05/14/20/52/selfie-8762129_1280.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQklsj54WowaVK0SKQzWitRWEOtWUye9vnuuA&s",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNKlOFK1j_LeSiZHGnLr8Rfi2xXZRh58cotA&s",
+  "https://plus.unsplash.com/premium_photo-1683129651802-1c7ba429a137?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zmllc3RhJTIwZGp8ZW58MHx8MHx8fDA%3D",
+];
+
+const grid = document.getElementById("imageGrid");
+
+
+images.forEach((imageSrc) => {
+  const gridItem = document.createElement("div");
+  gridItem.classList.add("grid-item");
+
+  const img = document.createElement("img");
+  const like = document.createElement("i");
+  const likeIcon = document.createElement("span");
+  let isLike = false
+
+  img.src = imageSrc;
+  img.alt = "Imagen dinámica";
+  img.setAttribute('class', 'gallary_img')
+  img.style.width = "100%";
+
+  likeIcon.setAttribute('class', 'material-symbols-outlined actives like_img')
+  likeIcon.textContent ="favorite"
+
+  like.setAttribute('class', 'uil uil-heart-alt like_img_animation')
+  like.setAttribute('id', 'animation_like')
+
+
+
+  gridItem.appendChild(img);
+  gridItem.appendChild(like);  
+  gridItem.appendChild(likeIcon);
+
+  grid.appendChild(gridItem);
+
+    img.addEventListener('mouseup', (evt) => {
+      if(isLike){
+        likeIcon.setAttribute('class','material-symbols-outlined actives like_img')
+        
+      } else {
+        likeIcon.setAttribute('class', 'material-symbols-outlined like_img')
+        
+      }
+
+      isLike = !isLike
+
+      like.classList.add('animate_like');
+
+      like.addEventListener('animationend', () => {
+        like.classList.remove('animate_like');
+      }, { once: true });
+    });
+
+});
+
+

@@ -15,9 +15,20 @@
         />
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=favorite" />
+
     </head>
 
     <body>
+
+        <header class="bg-light d-lg-none d-flex justify-content-between align-items-center p-2" id="header">
+            <img src="Logotipo.png" class="img-fluid mx-auto my-2 px-3" alt="BARRIONETA">
+            <div class="mt-2 toggle-button" id="toggleButtonMedia">
+                <div class="circleMedia">
+                    <i class="bi bi-sun"></i>
+                </div>
+            </div> 
+        </header>
+
 
         <div class="container-fluid">
             <div class="row g-0 d-flex justify-content-around">
@@ -58,15 +69,19 @@
                     </li>
                 </ul>
 
-                <!-- botones del menú-->
-                <div class="text-center">
-                    <button class="btn rounded-button mt-2 border" style="border-color: transparent;">
-                        <i class="bi bi-plus-circle"></i>
-                    </button>
-                    <button class="btn btn-secondary mt-2" id="theme-toggle" data-bs-theme="dark">
-                        Modo oscuro
-                    </button>                        
-                </div>
+                    <!-- botones del menú-->
+                    <div class="flex justify-content-center align-item-center">
+                        <button class="btn rounded-button mt-2 border" style="border-color: transparent;">
+                            <i class="bi bi-plus-circle"></i>
+                        </button>
+                        <div class="container-fluid d-flex justify-content-center align-items-center">
+                            <div class="mt-2 toggle-button" id="toggleButton">
+                                <div class="circle">
+                                    <i class="bi bi-sun"></i>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
                 </nav>
             
                 <!--OTRA COLUMNITA, A POCO NO?-->
@@ -297,10 +312,10 @@
         </div>
 
         <!-- menu para celulares -->
-        <nav class="navbar navbar-light bg-light d-lg-none">
+        <nav class="navbar bg-light d-lg-none" id="mobileMenu">
             <!-- Ocultar en pantallas grandes -->
             <div class="container-fluid justify-content-around my-2">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="index.html">
                     <i class="bi bi-house"></i>
                 </a>
                 <a class="nav-link" href="#">
@@ -323,6 +338,7 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="scripts/index.js"></script>
-        <script src="pinterest.js"></script>
+        <script src="scripts/darkmode.js"></script>
+        <script src="scripts/pinterest.js"></script>
     </body>
 </html>
