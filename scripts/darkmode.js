@@ -1,8 +1,7 @@
-//Dark mode
-
 const toggleButtonMedia = document.getElementById('toggleButtonMedia');
 const toggleButton = document.getElementById('toggleButton');
 
+// Función para manejar el cambio de tema
 const handleThemeToggle = () => {
     const isActive = toggleButton.classList.contains('active') || toggleButtonMedia.classList.contains('active');
     
@@ -18,13 +17,22 @@ const handleThemeToggle = () => {
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-bs-theme', newTheme);
 
+    // Guardar el nuevo tema en localStorage
+    localStorage.setItem('theme', newTheme);
+
+    // Cambiar estilos según el tema
+    updateStyles(newTheme);
+};
+
+// Función para actualizar los estilos según el tema
+const updateStyles = (theme) => {
     const header = document.getElementById('header');
     const mobileMenu = document.getElementById('mobileMenu');
     const children = sidebar.querySelectorAll('.nav-link');
     const perfilText = sidebar.querySelectorAll('.perfil-menu p');
     const portfolios = document.querySelectorAll('.portfolio');
 
-    if (newTheme === 'dark') {
+    if (theme === 'dark') {
         toggleButton.querySelector('.circle').innerHTML = '<i class="bi bi-moon"></i>';
         toggleButtonMedia.querySelector('.circleMedia').innerHTML = '<i class="bi bi-moon"></i>';
         
@@ -75,6 +83,19 @@ const handleThemeToggle = () => {
             item.classList.remove('bg-secondary');
             item.classList.add('bg-light');
         });
+    }
+};
+
+// Al cargar la página, verificar el tema guardado
+window.onload = () => {
+    const savedTheme = localStorage.getItem('theme') || 'light'; // Por defecto 'light'
+    document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    updateStyles(savedTheme);
+
+    // Activar el botón correspondiente
+    if (savedTheme === 'dark') {
+        toggleButton.classList.add('active');
+        toggleButtonMedia.classList.add('active');
     }
 };
 

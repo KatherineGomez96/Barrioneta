@@ -16,8 +16,22 @@ const images = [
   "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fHBlb3BsZSUyMGhhdmluZyUyMGZ1bnxlbnwwfHwwfHx8Mg%3D%3D"
 ];
 
-const grid = document.getElementById("imageGrid");
 
+//implementacion del localStorage para guardar likes
+// Recuperar estados de likes desde localStorage
+let likesState = JSON.parse(localStorage.getItem("likesState")) || {};
+
+// Inicializar el estado para imágenes que no existan en localStorage
+images.forEach((imageSrc) => {
+  if (likesState[imageSrc] === undefined) {
+    likesState[imageSrc] = false;
+  }
+});
+
+// Guardar el estado actualizado en localStorage
+localStorage.setItem("likesState", JSON.stringify(likesState));
+
+const grid = document.getElementById("imageGrid");
 
 images.forEach((imageSrc) => {
   const gridItem = document.createElement("div");
@@ -26,43 +40,46 @@ images.forEach((imageSrc) => {
   const img = document.createElement("img");
   const like = document.createElement("i");
   const likeIcon = document.createElement("span");
-  let isLike = false
+  let isLike = likesState[imageSrc]; // Cargar el estado inicial
 
   img.src = imageSrc;
   img.alt = "Imagen dinámica";
-  img.setAttribute('class', 'gallary_img')
+  img.setAttribute("class", "gallary_img");
   img.style.width = "100%";
 
-  likeIcon.setAttribute('class', 'material-symbols-outlined actives like_img')
-  likeIcon.textContent ="favorite"
+  likeIcon.setAttribute( // Agregar icono de like
+    "class",
+    isLike
+      ? "material-symbols-outlined actives like_img"
+      : "material-symbols-outlined like_img"
+  );
+  likeIcon.textContent = "favorite";
 
-  like.setAttribute('class', 'uil uil-heart-alt like_img_animation')
-  like.setAttribute('id', 'animation_like')
-
-
+  like.setAttribute("class", "uil uil-heart-alt like_img_animation");
+  like.setAttribute("id", "animation_like");
 
   gridItem.appendChild(img);
-  gridItem.appendChild(like);  
+  gridItem.appendChild(like);
   gridItem.appendChild(likeIcon);
 
   grid.appendChild(gridItem);
 
-    img.addEventListener('mouseup', (evt) => {
-      if(isLike){
-        likeIcon.setAttribute('class','material-symbols-outlined actives like_img')
-        
-      } else {
-        likeIcon.setAttribute('class', 'material-symbols-outlined like_img')
-        like.classList.add('animate_like');
+  img.addEventListener("mouseup", () => {
+    isLike = !isLike;
+    likesState[imageSrc] = isLike; // Actualizar estado en localStorage
+    localStorage.setItem("likesState", JSON.stringify(likesState));
 
-        like.addEventListener('animationend', () => {
-          like.classList.remove('animate_like');
-        }, { once: true });
-      }
+    if(isLike){
+      likeIcon.setAttribute('class','material-symbols-outlined actives like_img')
+      
+    } else {
+      likeIcon.setAttribute('class', 'material-symbols-outlined like_img')
+      like.classList.add('animate_like');
 
-      isLike = !isLike
-    });
-
+      like.addEventListener('animationend', () => {
+        like.classList.remove('animate_like');
+      }, { twice: true });
+    }
+  });
 });
-
 
