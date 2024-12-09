@@ -10,7 +10,6 @@
 .grid-item {
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .gallary_img {
@@ -31,7 +30,6 @@
 
 .like_img {
     position: absolute;
-    z-index: 10;
     bottom: 0;
     right: 0;
     margin: 20px;
@@ -94,6 +92,4 @@
   'GRAD' 0,
   'opsz' 24;
   color: black;
-  
-
 }

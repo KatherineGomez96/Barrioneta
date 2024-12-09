@@ -8,6 +8,12 @@ const images = [
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQklsj54WowaVK0SKQzWitRWEOtWUye9vnuuA&s",
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNKlOFK1j_LeSiZHGnLr8Rfi2xXZRh58cotA&s",
   "https://plus.unsplash.com/premium_photo-1683129651802-1c7ba429a137?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zmllc3RhJTIwZGp8ZW58MHx8MHx8fDA%3D",
+  "https://images.unsplash.com/photo-1535268244390-8b989b92d2bc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fHBlb3BsZSUyMGhhdmluZyUyMGZ1bnxlbnwwfHwwfHx8Mg%3D%3D",
+  "https://images.unsplash.com/photo-1464998857633-50e59fbf2fe6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBlb3BsZSUyMGhhdmluZyUyMGZ1bnxlbnwwfHwwfHx8Mg%3D%3D",
+  "https://images.unsplash.com/photo-1714972383523-7c636d2f0e9b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlJTIwaGF2aW5nJTIwZnVufGVufDB8fDB8fHwy",
+  "https://images.unsplash.com/photo-1730406919258-b031632e3de8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVvcGxlJTIwaGF2aW5nJTIwZnVufGVufDB8fDB8fHwy",
+  "https://images.unsplash.com/photo-1482235225574-c37692835cf3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fHBlb3BsZSUyMGhhdmluZyUyMGZ1bnxlbnwwfHwwfHx8Mg%3D%3D",
+  "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fHBlb3BsZSUyMGhhdmluZyUyMGZ1bnxlbnwwfHwwfHx8Mg%3D%3D"
 ];
 
 const grid = document.getElementById("imageGrid");
@@ -47,16 +53,14 @@ images.forEach((imageSrc) => {
         
       } else {
         likeIcon.setAttribute('class', 'material-symbols-outlined like_img')
-        
+        like.classList.add('animate_like');
+
+        like.addEventListener('animationend', () => {
+          like.classList.remove('animate_like');
+        }, { once: true });
       }
 
       isLike = !isLike
-
-      like.classList.add('animate_like');
-
-      like.addEventListener('animationend', () => {
-        like.classList.remove('animate_like');
-      }, { once: true });
     });
 
 });
