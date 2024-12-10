@@ -49,4 +49,4 @@ El proyecto de red social estática es una excelente oportunidad para practicar 
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/KatherineGomez96/Proyecto-Red-Social.git
+   git clone https://github.com/KatherineGomez96/Barrioneta.git
