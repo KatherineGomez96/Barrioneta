@@ -99,7 +99,8 @@ function viewStory(storyElement) {
     storyViewer.classList.add("visible");
     storyViewer.classList.remove("hidden");
 
-    storyElement.dataset.viewed = "true";
+    const username = storyElement.querySelector("p").innerText; 
+    markAsViewed(username);
 }
 
 // Función para cerrar el popup
@@ -109,13 +110,53 @@ function closeViewer() {
     storyViewer.classList.add("hidden");
 }
 
+// Función para marcar una historia como vista
+function markAsViewed(username) {
+    let viewedStories = JSON.parse(localStorage.getItem("viewedStories")) || [];
 
-function updateStories() {
+    if (!viewedStories.includes(username)) {
+        viewedStories.push(username);
+        localStorage.setItem("viewedStories", JSON.stringify(viewedStories));
+    }
+
+    updateStoryStyles();
+}
+
+// Función para marcar la historia de Pepita como no vista, para que se vea así ajá. 
+function resetFirstStory() {
+    const firstStory = document.querySelector(".story:first-child");
+    const username = firstStory.querySelector("p").innerText;
+
+    // Removerla de la lista de vistas en el localStorage, pero solo la de pepita alv.
+    let viewedStories = JSON.parse(localStorage.getItem("viewedStories")) || [];
+    viewedStories = viewedStories.filter((story) => story !== username);
+    localStorage.setItem("viewedStories", JSON.stringify(viewedStories));
+
+    // Actualizar visualmente
+    updateStoryStyles();
+}
+
+// Función para actualizar el estado visual de las historias
+function updateStoryStyles() {
     const stories = document.querySelectorAll(".story");
+
+    let viewedStories = JSON.parse(localStorage.getItem("viewedStories")) || [];
+
     stories.forEach((story) => {
-        const viewed = Math.random() > 0.5;
-        story.setAttribute("data-viewed", viewed ? "true" : "false");
+        const username = story.querySelector("p").innerText;
+
+        if (viewedStories.includes(username)) {
+            story.setAttribute("data-viewed", "true");
+        } else {
+            story.setAttribute("data-viewed", "false");
+        }
     });
 }
 
-setInterval(updateStories, 10000);
+// Inicializar las historias al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+    updateStoryStyles();
+
+    // Restablecer automáticamente la primera historia como no vista cada 10 segundos porque podemos.
+    setInterval(resetFirstStory, 10000);
+});
