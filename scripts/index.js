@@ -98,37 +98,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const storiesData = [
         {
             name: "Pepita Martinez",
-            img: "https://via.placeholder.com/150",
+            img: "https://plus.unsplash.com/premium_photo-1707816501017-b16e50fabc30?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGVvcGxlJTIwc2VmaWVzfGVufDB8MXwwfHx8MA%3D%3D",
             viewed: false,
         },
         {
             name: "Maria Marta",
-            img: "https://via.placeholder.com/150",
+            img: "https://plus.unsplash.com/premium_photo-1675791188810-3a01768c1e2f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z2VudGV8ZW58MHwxfDB8fHww",
             viewed: false,
         },
         {
             name: "Doña Lupe",
-            img: "https://via.placeholder.com/150",
+            img: "https://images.unsplash.com/photo-1643868420405-48e32c6f4620?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFtaWxpYXxlbnwwfDF8MHx8fDA%3D",
             viewed: true,
         },
         {
             name: "Juan Carlos",
-            img: "https://via.placeholder.com/150",
+            img: "https://images.unsplash.com/photo-1512813498716-3e640fed3f39?q=80&w=1448&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             viewed: false,
         },
         {
             name: "Maria Marta",
-            img: "https://via.placeholder.com/150",
+            img: "https://images.unsplash.com/photo-1557002665-c552e1832483?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             viewed: false,
         },
         {
             name: "Marcos Aguirre",
-            img: "https://via.placeholder.com/150",
+            img: "https://images.unsplash.com/photo-1570897234456-a6d0a709574f?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             viewed: false,
         },
         {
             name: "Agustina Mendez",
-            img: "https://via.placeholder.com/150",
+            img: "https://images.unsplash.com/photo-1600209142000-aa256622e64a?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             viewed: false,
         },
     ];

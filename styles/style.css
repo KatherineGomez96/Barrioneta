@@ -119,10 +119,6 @@
 
 
 .story img {
-    width: 80px; 
-    height: 80px;
-    object-fit: cover; 
-    border-radius: 50%; 
     border: 2px solid #ccc; 
     cursor: pointer;
 }
@@ -141,8 +137,7 @@
 
 .image-wrapper img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 100%;
     object-position: center;
 }
 
@@ -195,7 +190,6 @@
     position: relative;
     width: 80%;
     max-width: 400px;
-    background: #fff;
     border-radius: 10px;
     overflow: hidden;
 }
