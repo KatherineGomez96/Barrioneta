@@ -39,7 +39,7 @@ document.getElementById("loginForm").addEventListener("submit", (event) => {
     localStorage.setItem("barrioneta", JSON.stringify(loggedUser));
 
     // aca no toque nada, redirigir al index
-    window.location.href = "index.html";
+    window.location.href = "home.html";
   } else {
     // mostrar el mensaje de error
     errorMessage.textContent = "Usuario o contraseña incorrectos.";

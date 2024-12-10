@@ -3,7 +3,7 @@ const user = JSON.parse(localStorage.getItem("barrioneta"));
 
 if (!user || !user.loggedIn) { 
 
-  window.location.href = "logIn.html";
+  window.location.href = "index.html";
   
 }
 
