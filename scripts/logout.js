@@ -12,7 +12,7 @@ function logout() {
   
   localStorage.removeItem("barrioneta");
 
-  window.location.href = "logIn.html";
+  window.location.href = "index.html";
 }
 
 //-------------------Kathy estuvo aqui--------------------
