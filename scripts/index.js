@@ -4,28 +4,28 @@ const publicaciones = [
     {
         imagen: "assets/imgCarrusel/parciales.jpg",
         perfil: "assets/imgPerfil/anteojos.jpg",
-        nombre: "Letuu"
+        nombre: "Letuu",
     },
     {
         imagen: "assets/imgCarrusel/asado.jpg",
         perfil: "assets/imgPerfil/barbie.jpg",
-        nombre: "Joac0x"
+        nombre: "Joac0x",
     },
     {
         imagen: "assets/imgCarrusel/mateEnPlaza.jpg",
         perfil: "assets/imgPerfil/señorOrejas.jpg",
-        nombre: "xKarenx"
+        nombre: "xKarenx",
     },
     {
         imagen: "assets/imgCarrusel/Viajecito.jpg",
         perfil: "assets/imgPerfil/yendoMarley.jpg",
-        nombre: "TomiiLP"
+        nombre: "TomiiLP",
     },
     {
         imagen: "assets/imgCarrusel/Uno.jpg",
         perfil: "assets/imgPerfil/spiderPink.jpg",
-        nombre: "R0CHI"
-    }
+        nombre: "R0CHI",
+    },
 ];
 
 const carouselContent = document.getElementById("carouselContent");
@@ -35,7 +35,9 @@ publicaciones.forEach((pub, index) => {
     const slide = `
     <div class="carousel-item ${activeClass}">
         <div class="story-container">
-            <img src="${pub.imagen}" class="story-image d-block w-100 img-fluid" alt="Imagen">
+            <img src="${
+                pub.imagen
+            }" class="story-image d-block w-100 img-fluid" alt="Imagen">
             <div class="user-actions">
                 <div class="user-info">
                 <img src="${pub.perfil}" class="user-profile" alt="Perfil">
@@ -45,7 +47,9 @@ publicaciones.forEach((pub, index) => {
                 <!-- ME GUSTA: CORAZÓN -->
                 <div class="like-button" onclick="toggleLike(this)">
                     <i class="bi bi-heart"></i>
-                    <span class="like-count">${Math.floor(Math.random() * 500)}</span>
+                    <span class="like-count">${Math.floor(
+                        Math.random() * 500
+                    )}</span>
                 </div>
                 <!-- COMENTARIOS: UN GLOBO -->
                 <div class="comment-button">
@@ -88,6 +92,118 @@ function toggleSend(button) {
     button.classList.toggle("send");
 }
 
+// -------------------------------- HISTORIAS ---------------------------------------
+
+document.addEventListener("DOMContentLoaded", () => {
+    const storiesData = [
+        {
+            name: "Pepita Martinez",
+            img: "https://via.placeholder.com/150",
+            viewed: false,
+        },
+        {
+            name: "Maria Marta",
+            img: "https://via.placeholder.com/150",
+            viewed: false,
+        },
+        {
+            name: "Doña Lupe",
+            img: "https://via.placeholder.com/150",
+            viewed: true,
+        },
+        {
+            name: "Juan Carlos",
+            img: "https://via.placeholder.com/150",
+            viewed: false,
+        },
+        {
+            name: "Maria Marta",
+            img: "https://via.placeholder.com/150",
+            viewed: false,
+        },
+        {
+            name: "Marcos Aguirre",
+            img: "https://via.placeholder.com/150",
+            viewed: false,
+        },
+        {
+            name: "Agustina Mendez",
+            img: "https://via.placeholder.com/150",
+            viewed: false,
+        },
+    ];
+
+    const storiesContainer = document.getElementById("stories-container");
+
+    storiesData.forEach((story) => {
+        const storyElement = document.createElement("div");
+        storyElement.className = "story";
+        storyElement.setAttribute("data-viewed", story.viewed);
+        storyElement.setAttribute("onclick", "viewStory(this)");
+
+        const imageWrapper = document.createElement("div");
+        imageWrapper.className = story.viewed
+            ? "image-wrapper rounded-circle"
+            : "image-wrapper";
+
+        const imgElement = document.createElement("img");
+        imgElement.src = story.img;
+        imgElement.alt = story.name;
+        imgElement.className = "rounded-img";
+
+        const nameElement = document.createElement("p");
+        nameElement.textContent = story.name;
+
+        imageWrapper.appendChild(imgElement);
+        storyElement.appendChild(imageWrapper);
+        storyElement.appendChild(nameElement);
+
+        storiesContainer.appendChild(storyElement);
+    });
+
+    // Actualizar el estilo inicial de las historias
+    updateStoryStyles();
+
+    // Restablecer automáticamente la primera historia como no vista cada 10 segundos
+    setInterval(resetFirstStory, 10000);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const storiesContainer = document.getElementById("stories-container");
+
+    let isDragging = false;
+    let startX, scrollLeft;
+
+    // Inicia el arrastre
+    storiesContainer.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        storiesContainer.classList.add("active");
+        startX = e.pageX - storiesContainer.offsetLeft;
+        scrollLeft = storiesContainer.scrollLeft;
+    });
+
+    // Finaliza el arrastre en cualquier lugar del documento
+    document.addEventListener("mouseup", () => {
+        isDragging = false;
+        storiesContainer.classList.remove("active");
+    });
+
+    // Mientras se arrastra
+    storiesContainer.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - storiesContainer.offsetLeft;
+        const walk = (x - startX) * 0.75; 
+        storiesContainer.scrollLeft = scrollLeft - walk;
+    });
+
+    // Evitar que el cursor se quede en estado "grabbing"
+    document.addEventListener("mouseleave", () => {
+        isDragging = false;
+        storiesContainer.classList.remove("active");
+    });
+});
+
 // Función para mostrar una historia
 function viewStory(storyElement) {
     const storyViewer = document.getElementById("story-viewer");
@@ -99,7 +215,7 @@ function viewStory(storyElement) {
     storyViewer.classList.add("visible");
     storyViewer.classList.remove("hidden");
 
-    const username = storyElement.querySelector("p").innerText; 
+    const username = storyElement.querySelector("p").innerText;
     markAsViewed(username);
 }
 
@@ -122,7 +238,7 @@ function markAsViewed(username) {
     updateStoryStyles();
 }
 
-// Función para marcar la historia de Pepita como no vista, para que se vea así ajá. 
+// Función para marcar la historia de Pepita como no vista, para que se vea así ajá.
 function resetFirstStory() {
     const firstStory = document.querySelector(".story:first-child");
     const username = firstStory.querySelector("p").innerText;
