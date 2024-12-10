@@ -13,6 +13,7 @@ const validUser = {
 };
 
 
+// Compara el usuario ingresado con el usuario guardado en localStorage
 // redirigir al index directamente
 if (activeUser && activeUser.loggedIn) {
   window.location.href = "index.html";
