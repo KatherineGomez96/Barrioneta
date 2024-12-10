@@ -96,6 +96,11 @@
     padding: 10px;
     white-space: nowrap; 
     max-width: 100%; 
+    cursor: grab;
+}
+
+.stories-container:active {
+    cursor: grabbing; 
 }
 
 .stories-container::-webkit-scrollbar {
