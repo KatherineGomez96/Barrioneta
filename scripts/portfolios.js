@@ -8,7 +8,7 @@ const portfolios = [
     {
         name: "Portfolio de Ailén",
         url: "https://66f5beb4e1063b445274f964--aquamarine-cannoli-059041.netlify.app/",
-        image: "portfolios/portfolioailen.png",
+        image: "portfolios/portfolioAilen.png",
     },
     {
         name: "Portfolio de Antonella",
@@ -17,7 +17,7 @@ const portfolios = [
     },
     {
         name: "Portfolio de Katherine",
-        url: "https://fluffy-cannoli-7b18a9.netlify.app/",
+        url: "https://portfoliokatherinegomez.netlify.app/",
         image: "portfolios/portfolioKathe.png",
     },
     {
@@ -43,7 +43,7 @@ portfolios.forEach(portfolio => {
     const portfolioDiv = ` <div class="portfolio p-2 mb-2 bg-light">
     <img
         src=${portfolio.image} 
-        alt="portfolio Abi"
+        alt="portfolio"
         class="img-fluid mb-2"
     />
 
