@@ -24,7 +24,7 @@ let likesState = JSON.parse(localStorage.getItem("likesState")) || {};
 // Inicializar el estado para imágenes que no existan en localStorage
 images.forEach((imageSrc) => {
   if (likesState[imageSrc] === undefined) {
-    likesState[imageSrc] = false;
+    likesState[imageSrc] = true;
   }
 });
 
